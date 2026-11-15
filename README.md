@@ -7,9 +7,9 @@
 
 ## 📋 Project Overview
 
-This repository contains web performance and load testing suite built with **Apache JMeter 5.6.3**[cite: 1, 3]. The test plan evaluates the availability, responsiveness, and stability of **ToolsQA** (`www.toolsqa.com`) and **DemoQA** (`demoqa.com`) across **13 distinct web pages** under simulated concurrent user load[cite: 1].
+This repository contains web performance and load testing suite built with **Apache JMeter 5.6.3**. The test plan evaluates the availability, responsiveness, and stability of **ToolsQA** (`www.toolsqa.com`) and **DemoQA** (`demoqa.com`) across **13 distinct web pages** under simulated concurrent user load.
 
-Each endpoint is encapsulated within its own **Simple Controller** and validated using dual **Response Assertions** to ensure every HTTP request returns a valid `200 OK` response[cite: 1].
+Each endpoint is encapsulated within its own **Simple Controller** and validated using dual **Response Assertions** to ensure every HTTP request returns a valid `200 OK` response.
 
 ---
 
@@ -19,77 +19,75 @@ Each endpoint is encapsulated within its own **Simple Controller** and validated
 | :--- | :--- |
 | **Test Plan File** | `Toolsqa_weburl.jmx`[cite: 2, 3] |
 | **JMeter Version** | Apache JMeter 5.6.3[cite: 1, 3] |
-| **Target Domains** | `https://www.toolsqa.com`, `https://demoqa.com`[cite: 1] |
-| **Number of Threads (Users)** | `10` Virtual Users[cite: 1] |
-| **Ramp-Up Period** | `5` Seconds (2 users/second)[cite: 1] |
-| **Loop Count** | `1` Iteration per user[cite: 1] |
-| **Total Samplers / Endpoints** | `13` HTTP `GET` Requests[cite: 1] |
-| **Total Requests Executed** | `130` Samples (`10 users × 13 pages`)[cite: 1] |
-| **Error Handling** | Continue on Sample Error[cite: 1] |
+| **Target Domains** | `https://www.toolsqa.com`, `https://demoqa.com` |
+| **Number of Threads (Users)** | `10` Virtual Users |
+| **Ramp-Up Period** | `5` Seconds (2 users/second) |
+| **Loop Count** | `1` Iteration per user |
+| **Total Samplers / Endpoints** | `13` HTTP `GET` Requests |
+| **Total Requests Executed** | `130` Samples (`10 users × 13 pages`) |
+| **Error Handling** | Continue on Sample Error |
 
 ---
 
 ## 🧪 Endpoints & Controllers Covered
 
-All 13 endpoints are organized into modular **Generic (Simple) Controllers** and verified with two assertions: **Verify status code `200`** and **Verify status message `OK`**[cite: 1]:
+All 13 endpoints are organized into modular **Generic (Simple) Controllers** and verified with two assertions: **Verify status code `200`** and **Verify status message `OK`**:
 
 | # | Controller / Page Name | Method | Domain | Endpoint Path |
 | :-: | :--- | :---: | :--- | :--- |
-| 1 | **Home page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/`[cite: 1] |
-| 2 | **Selenium Training page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/selenium-training?q=headers`[cite: 1] |
-| 3 | **Playground page**[cite: 1] | `GET`[cite: 1] | `demoqa.com`[cite: 1] | `/`[cite: 1] |
-| 4 | **About page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/about`[cite: 1] |
-| 5 | **Selenium page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/selenium-webdriver/selenium-tutorial/`[cite: 1] |
-| 6 | **Cucumber page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/cucumber-tutorial/`[cite: 1] |
-| 7 | **Rest Assured page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/rest-assured-tutorial/`[cite: 1] |
-| 8 | **ISTQB page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/software-testing/istqb-foundation-level/`[cite: 1] |
-| 9 | **Postman page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/postman/postman-tutorial/`[cite: 1] |
-| 10 | **Git page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/git/git-tutorial/`[cite: 1] |
-| 11 | **TestNG page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/testng/testng-tutorial/`[cite: 1] |
-| 12 | **Cypress page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/cypress-tutorial/`[cite: 1] |
-| 13 | **Python page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/python-tutorial/`[cite: 1] |
-| 14 | **Scrum page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/agile/agile-scrum-tutorial/`[cite: 1] |
-| 15 | **Enroll Yourself page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/selenium-training?q=banner#enroll-form`[cite: 1] |
-| 16 | **Read More page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/selenium-training?q=banner`[cite: 1] |
-| 17 | **Tutorials page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/categories`[cite: 1] |
-| 18 | **Test Project page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/testproject-tutorial`[cite: 1] |
-| 19 | **Software Testing page**[cite: 1] | `GET`[cite: 1] | `www.toolsqa.com`[cite: 1] | `/software-testing/software-testing-tutorial/`[cite: 1] |
+| 1 | **Home page** | `GET` | `www.toolsqa.com` | `/` |
+| 2 | **Selenium Training page** | `GET` | `www.toolsqa.com` | `/selenium-training?q=headers` |
+| 3 | **Playground page** | `GET` | `demoqa.com` | `/` |
+| 4 | **About page** | `GET` | `www.toolsqa.com` | `/about` |
+| 5 | **Selenium page** | `GET` | `www.toolsqa.com` | `/selenium-webdriver/selenium-tutorial/` |
+| 6 | **Cucumber page** | `GET` | `www.toolsqa.com` | `/cucumber-tutorial/` |
+| 7 | **Rest Assured page** | `GET` | `www.toolsqa.com` | `/rest-assured-tutorial/` |
+| 8 | **ISTQB page** | `GET` | `www.toolsqa.com` | `/software-testing/istqb-foundation-level/` |
+| 9 | **Postman page** | `GET` | `www.toolsqa.com` | `/postman/postman-tutorial/` |
+| 10 | **Git page** | `GET` | `www.toolsqa.com` | `/git/git-tutorial/` |
+| 11 | **TestNG page** | `GET` | `www.toolsqa.com` | `/testng/testng-tutorial/` |
+| 12 | **Cypress page** | `GET` | `www.toolsqa.com` | `/cypress-tutorial/` |
+| 13 | **Python page** | `GET` | `www.toolsqa.com` | `/python-tutorial/` |
+| 14 | **Scrum page** | `GET` | `www.toolsqa.com` | `/agile/agile-scrum-tutorial/` |
+| 15 | **Enroll Yourself page** | `GET` | `www.toolsqa.com` | `/selenium-training?q=banner#enroll-form` |
+| 16 | **Read More page** | `GET` | `www.toolsqa.com` | `/selenium-training?q=banner` |
+| 17 | **Tutorials page** | `GET` | `www.toolsqa.com` | `/categories` |
+| 18 | **Test Project page** | `GET` | `www.toolsqa.com` | `/testproject-tutorial` |
+| 19 | **Software Testing page** | `GET` | `www.toolsqa.com` | `/software-testing/software-testing-tutorial/` |
 
-*(All 19 HTTP Request Samplers executed cleanly across 10 concurrent threads = **190 total requests**.)*[cite: 1]
+*(All 19 HTTP Request Samplers executed cleanly across 10 concurrent threads = **190 total requests**.)*
 
 ---
 
-## 📊 Performance Test Results & APDEX Summary
+## 📁 Project Structure
+
+```text
+Toolsqa-weburl-Performance-Test/
+│
+├── Toolsqa_weburl.jmx
+├── Toolsqa_weburl.jtl
+├── README.md
+│
+├── images/
+│   ├── jmeter-interface.png
+│   └── performance-dashboard.png
+│
+├── Toolsqa_weburl.html/
+│   └── index.html
+│
+└── Toolsqa_weburl.html/
+    └── index.html
+    └── content
+    └── sbadmin2-1.0.7
+```
+
+*The `.jtl` results file and generated HTML report folder are created after running the commands below.*
+
+## 📊 Performance Test Results Summary
 
 * **Source File:** `Toolsqa_weburl.jtl`
-* **Execution Window:** `11/15/26 7:05 PM` – `11/15/26 7:06 PM`[cite: 2, 4]
-* **Requests Summary:** **100% PASS** (`0%` Error Rate)[cite: 4]
-* **Overall APDEX Score:** **`0.666`** (Toleration Threshold `T`: `500 ms` | Frustration Threshold `F`: `1 sec 500 ms`)[cite: 4]
-
-### APDEX Breakdown by Page
-
-| Sampler / Page Label | APDEX Score | Toleration (`T`) | Frustration (`F`) | Status |
-| :--- | :---: | :---: | :---: | :---: |
-| **Total (Overall)**[cite: 4] | **0.666**[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ 100% PASS[cite: 4] |
-| **About page**[cite: 4] | 0.900[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Tutorials page**[cite: 4] | 0.900[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Selenium Training page**[cite: 4] | 0.800[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Enroll Yourself page**[cite: 4] | 0.750[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Read More page**[cite: 4] | 0.750[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Home page**[cite: 4] | 0.700[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Test Project page**[cite: 4] | 0.700[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **ISTQB page**[cite: 4] | 0.700[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Rest Assured page**[cite: 4] | 0.700[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Software Testing page**[cite: 4] | 0.700[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **TestNG page**[cite: 4] | 0.650[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Python page**[cite: 4] | 0.600[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Scrum page**[cite: 4] | 0.600[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Cucumber page**[cite: 4] | 0.600[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Git page**[cite: 4] | 0.550[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Cypress page**[cite: 4] | 0.550[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Selenium page**[cite: 4] | 0.550[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Postman page**[cite: 4] | 0.500[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
-| **Playground page**[cite: 4] | 0.450[cite: 4] | 500 ms[cite: 4] | 1500 ms[cite: 4] | ✅ PASS[cite: 4] |
+* **Execution Window:** `11/15/26 7:05 PM` – `11/15/26 7:06 PM`
+* **Requests Summary:** **100% PASS** (`0%` Error Rate)
 
 ---
 
@@ -109,11 +107,57 @@ Running JMeter in **Non-GUI (CLI) mode** is recommended for accurate performance
 
 ### Prerequisites
 * **Java (JDK 8 or higher)** installed and configured in `PATH`
-* **Apache JMeter 5.6.3** installed and added to system environment variables[cite: 1, 3]
+* **Apache JMeter 5.6.3** installed and added to system environment variables
 
-### Step-by-Step Execution Commands
+### Step-by-Step Execution Commands to Generate Report
 
 1. **General Command Syntax:**
    ```bash
    jmeter -n -t filename.jmx -l filename.jtl
    jmeter -g filename.jtl -o filename.html
+
+### Steps to Generate the Report for this project
+
+**Step 1:** Execute the JMeter test plan.
+
+```bash
+jmeter -n -t Toolsqa_weburl.jmx -l Toolsqa_weburl.jtl
+```
+
+**Step 2:** Generate the HTML dashboard.
+
+```bash
+jmeter -g Toolsqa_weburl.jtl -o Toolsqa_weburl.html
+```
+
+**Step 3:** Open the generated report.
+
+Navigate to the `Toolsqa_weburl.html` directory and open `index.html` in your web browser.
+
+**Important Notes:**
+
+- Run both commands from the directory containing `Toolsqa_weburl.jmx`.
+- The first command generates the `.jtl` results file.
+- The second command uses that `.jtl` file to generate the HTML dashboard.
+- The output directory `Toolsqa_weburl.html` must not already exist or must be empty before report generation.
+- Do not modify the generated report files if you want the dashboard to work correctly.
+
+## 📝 Report Notes
+
+The project also contains a supplied `Toolsqa_weburl.html/content` file. It references additional supporting assets, including CSS, JavaScript, and dashboard resources.
+
+For a complete and accurate performance report, generate a fresh HTML dashboard using the two JMeter commands described above.
+
+The actual performance metrics, such as response time, throughput, error rate, and other dashboard statistics, depend on the test execution results stored in the `.jtl` file.
+
+## 👤 Author
+
+**Kanak Roy Shanda**
+
+- 🐙 GitHub: [Visit my GitHub](https://github.com/Kanak-Roy)
+- 💼 LinkedIn: [Connect with me on LinkedIn](https://www.linkedin.com/in/kanak-roy-shanda-601961238/)
+- 📧 Email: [kanakroyshanda@gmail.com](mailto:kanakroyshanda@gmail.com)
+
+---
+
+**Thank you for visiting this repository!**
