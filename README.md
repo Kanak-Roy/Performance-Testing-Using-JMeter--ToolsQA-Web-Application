@@ -96,10 +96,10 @@ All 13 endpoints are organized into modular **Generic (Simple) Controllers** and
 ## 🖼️ Visuals & Reports
 
 ### 1. Apache JMeter Test Plan Interface
-![JMeter Test Plan Interface](jmeter-interface.jpg)
+![JMeter Test Plan Interface](Screenshots/jmeter-interface.png)
 
 ### 2. HTML Performance Dashboard Report
-![Apache JMeter HTML Dashboard Report](performance-dashboard.png)
+![Apache JMeter HTML Dashboard Report](Screenshots/performance-dashboard.png)
 
 ---
 
